@@ -1,5 +1,3 @@
-console.log('Client side javascript file is loaded.')
-
     const weatherForm = document.querySelector('form')
     const search = document.querySelector('input')
     const messageOne = document.querySelector('#message-1')
@@ -13,7 +11,7 @@ console.log('Client side javascript file is loaded.')
        const location = search.value
        messageOne.textContent="Loading..."
        messageTwo.textContent=''
-        fetch('http://localhost:3000/weather?address='+location).then((response) => {
+        fetch('/weather?address='+location).then((response) => {
             messageOne.textContent=''   
         response.json().then((data)=> {
                 if(data.error) {
